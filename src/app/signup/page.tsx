@@ -37,7 +37,7 @@ const Signup = () => {
 
     return (
       <div className="flex flex-col items-center justify-center min-h-screen py-2 border-1">
-        <h1>{loading ? "Processing": "Signup"}</h1>
+        <h1>{loading ? "Processing" : "Signup"}</h1>
         <hr />
         <label htmlFor="username">Username</label>
         <input
@@ -66,6 +66,9 @@ const Signup = () => {
           onChange={(e) => setUser({ ...user, password: e.target.value })}
           placeholder="password"
         />
+        <p className="mb-2">
+          Already Registered? <Link href="/login">Login Here</Link>
+        </p>
         <button
           className="p-2 border border-gray-300 rounded-lg mb-4 focus:outline-none focus: border-gray-600"
           onClick={handleSignup}
@@ -73,9 +76,6 @@ const Signup = () => {
         >
           Register
         </button>
-        <p>
-          Already Registered? <Link href="/login">Login Here</Link>
-        </p>
       </div>
     );
 }

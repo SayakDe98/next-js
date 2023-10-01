@@ -36,9 +36,11 @@ const Login = () => {
 
   return (
     <div className="text-black flex flex-col items-center justify-center min-h-screen py-2 border-1">
-      <h1>{loading? "Processing" : "Login"}</h1>
+      <h1 className="text-white">{loading ? "Processing" : "Login"}</h1>
       <hr />
-      <label htmlFor="email">Email</label>
+      <label htmlFor="email" className="text-white">
+        Email
+      </label>
       <input
         className="text-black p-2 border border-gray-300 rounded-lg mb-4 focus:outline-none focus: border-gray-600"
         id="email"
@@ -47,7 +49,9 @@ const Login = () => {
         onChange={(e) => setUser({ ...user, email: e.target.value })}
         placeholder="email"
       />
-      <label htmlFor="password">Password</label>
+      <label htmlFor="password" className="text-white">
+        Password
+      </label>
       <input
         className="text-black p-2 border border-gray-300 rounded-lg mb-4 focus:outline-none focus: border-gray-600"
         id="password"
@@ -56,6 +60,9 @@ const Login = () => {
         onChange={(e) => setUser({ ...user, password: e.target.value })}
         placeholder="password"
       />
+      <p className="text-white mb-2">
+        Don't have an account? <Link href="/signup">Register Here</Link>
+      </p>
       <button
         className="text-white p-2 border border-gray-300 rounded-lg mb-4 focus:outline-none focus: border-gray-600"
         onClick={handleLogin}
@@ -63,9 +70,6 @@ const Login = () => {
       >
         Login
       </button>
-      <p>
-        Don't have an account? <Link href="/signup">Register Here</Link>
-      </p>
     </div>
   );
 };
